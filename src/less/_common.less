@@ -1,0 +1,40 @@
+@include url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+//Global reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100vh;
+    padding-top: 7rem;
+    font-family: 'Lato', sans-serif;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right bottom,
+            rgba(@color-main, 100%) 0%,
+            rgba(@color-main-light, 100%) 100%);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.cooking {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: @color-grey-4;
+    min-height: 80vh;
+    box-shadow: 0 2rem 4rem rgba(@color-black, 0.4);
+    border-radius: 5px;
+    display: flex;
+}

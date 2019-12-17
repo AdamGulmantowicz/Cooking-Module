@@ -1,0 +1,84 @@
+.results {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    // #edamam-badge {
+    //     justify-self: flex-end;
+    // }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+    }
+
+    .recipe__link {
+        height: 10rem;
+        display: flex;
+        align-items: center;
+        padding: 0 2rem;
+        border-bottom: @bor-1;
+        cursor: pointer;
+        transition: all .2s;
+
+        &:hover {
+            background: @color-grey-3;
+
+            .likes__fig {
+                box-shadow: @bsha-1h;
+            }
+
+            img {
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+        }
+    }
+
+    &__page {
+        display: flex;
+        justify-content: space-between;
+        padding: 4rem 2rem;
+
+        .results__btn--prev {
+            margin-right: auto;
+        }
+
+        .results__btn--next {
+            margin-left: auto;
+        }
+    }
+
+}
+
+.likes {
+
+    &__data {
+        margin-left: 4rem;
+        text-transform: uppercase;
+    }
+
+    &__fig {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        box-shadow: @bsha-1;
+        transition: all .2s;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all .2s;
+        }
+    }
+
+    &__name {
+        font-size: 1.8rem;
+        margin: .5rem 0;
+    }
+
+}

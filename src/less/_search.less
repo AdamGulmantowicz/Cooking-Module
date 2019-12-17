@@ -1,0 +1,34 @@
+.search {
+    flex-basis: 33.33%;
+    border-right: @bor-1;
+
+    display: flex;
+    flex-direction: column;
+
+    &__form {
+        padding: 2rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: @bor-1;
+    }
+
+    &__input {
+        border: none;
+        font-size: 1.6rem;
+        padding: 1rem 2rem;
+        border-radius: 30px;
+        box-shadow: @bsha-1;
+        margin-right: 1rem;
+        transition: all .2s;
+
+        &:focus,
+        &:active {
+            outline: none;
+        }
+
+        &:focus {
+            transform: scaleX(1.02);
+        }
+    }
+}
