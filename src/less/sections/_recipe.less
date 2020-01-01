@@ -1,0 +1,129 @@
+.recipe {
+    flex-basis: 60%;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    &__fig {
+        position: relative;
+        height: 30rem;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__background {
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-image: linear-gradient(to right bottom, rgba(@color-second, .4) 0%, rgba(@color-second-light, .6) 60%);
+
+    }
+
+    &__title {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .title-gradient--purple {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -85%) rotate(-3deg);
+            width: 100%;
+        }
+
+    }
+
+
+    &__details {
+        display: flex;
+        padding: 2rem 1rem;
+        justify-content: space-around;
+        font-size: 1.2rem;
+
+        border-bottom: @bor-1;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+
+        >*:not(:last-child) {
+            margin-right: .5rem;
+        }
+    }
+
+    &__ingredients {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    &__ingredient-list {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 1.1rem;
+        padding: 0 4rem;
+    }
+
+    &__item {
+        flex-basis: 50%;
+
+        display: flex;
+        align-items: center;
+
+        padding: 1rem 0;
+    }
+
+    &__btn {
+        margin: 5rem 0;
+        max-width: 30rem;
+        align-self: center;
+    }
+
+    &__directions {
+        border-top: @bor-1;
+        font-size: 1.4rem;
+        padding: 2rem 0;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+
+        >* {
+            margin: .5rem 0;
+        }
+    }
+
+    &__icon,
+    &__info-icon {
+        width: 2rem;
+        height: 2rem;
+        fill: @color-grey-1;
+    }
+
+    &__info-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    &__ingredient {
+        width: calc(~"100% -"2rem);
+    }
+
+}

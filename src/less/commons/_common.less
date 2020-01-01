@@ -13,7 +13,8 @@ html {
 
 body {
     min-height: 100vh;
-    padding-top: 7rem;
+    height: 100%;
+    padding: 7rem;
     font-family: 'Lato', sans-serif;
     background-repeat: no-repeat;
     background-image: linear-gradient(to right bottom,
@@ -21,8 +22,11 @@ body {
             rgba(@color-main-light, 100%) 100%);
 }
 
-a {
+a,
+a:visited,
+a:link {
     text-decoration: none;
+    color: @color-black;
 }
 
 ul {

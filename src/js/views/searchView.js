@@ -24,16 +24,22 @@ export const limitRecipeTitle = (title, limit=17) => {
     return title;
 }
 
-export const renderRecipe = recipe => {
+export const getHashFromURL = (url) => {
+    return url.slice(url.indexOf('#')+1);
+}
+
+export const renderRecipe = (recipe, id) => {
     const markup = `
-    <li class="recipe__link">
-        <figure class="likes__fig">
-            <img src="${recipe.image}" alt="${recipe.label}">
-        </figure>
-        <div class="likes__data">
-            <h4 class="likes__name">${limitRecipeTitle(recipe.label)}</h4>
-            <p class="likes__author">${recipe.source}</p>
-        </div>
+    <li>
+        <a class="recipe__link" href="#${getHashFromURL(recipe.uri)}" data-goto="${id}">
+            <figure class="likes__fig">
+                <img src="${recipe.image}" alt="${recipe.label}">
+            </figure>
+            <div class="likes__data">
+                <h4 class="likes__name">${limitRecipeTitle(recipe.label)}</h4>
+                <p class="likes__author">${recipe.source}</p>
+            </div>
+        </a>
     </li>
     `;
     elements.searchResultsList.insertAdjacentHTML('beforeend', markup);
@@ -76,7 +82,7 @@ export const renderResults = (recipes, page=1, resPerPage=5) => {
     //Render results
     const start = (page-1)*resPerPage;
     const end = page*resPerPage;
-    recipes.slice(start, end).forEach(item => renderRecipe(item));
+    recipes.slice(start, end).forEach(item => renderRecipe(item, recipes.indexOf(item)));
  
     //Render pagination
     renderButtons(page, recipes.length, resPerPage);

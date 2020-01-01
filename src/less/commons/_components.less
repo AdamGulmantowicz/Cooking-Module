@@ -39,3 +39,24 @@
         fill: @color-white;
     }
 }
+
+.title-gradient {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to right, @color-second 0%, @color-second-light 100%);
+
+    span {
+        color: transparent;
+    }
+
+    &--purple:extend(.title-gradient all) {
+        background-image: linear-gradient(to right, @color-second 0%, @color-purple 80%);
+
+    }
+}
